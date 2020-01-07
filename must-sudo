@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+if [ $EUID -ne 0 ]; then
+	echo Must run $(basename $0) with admin credentials
+fi
+
