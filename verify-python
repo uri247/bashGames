@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if ! [[ $(type -P python3) && $(python3 --version) ]]; then
+    echo pytyon3 is missing
+else
+    echo python3 is there is running version
+fi

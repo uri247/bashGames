@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+# test if can sudo without a prompt
+if ! sudo -n true; then
+    echo must run as admin
+    exit
+fi
+
+echo can sudo automatically
+echo my user id: $EUID
+sudo bash -c 'echo my user id when sudo: $EUID'
+
