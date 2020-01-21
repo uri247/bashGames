@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [[ ! -z $HOME ]]; then
+    echo \$HOME is defined: $HOME
+fi
+
+if [[ ! -z $BABA_GANUSH ]]; then
+    echo \$BABA_GANUSH is defined: $BABA_GANUSH
+else
+    echo $\BABA_GANUSH is NOT defined.  try
+    echo export BABA_GANUSH=\'hummus pita chips salad\'
+fi
+
+
