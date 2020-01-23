@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# See if there are any arguments
+if [[ $# -ge 1 ]]; then
+    echo there are arguments:
+else
+    echo no arguments
+fi
+
+
+# iterate all arguments
+for arg in $@; do
+    echo $arg
+done
+
+
+no_shit=0
+no_pull=0
+for arg in $@; do
+    case $arg in
+	--no-shit)
+	    no_shit=1
+	    ;;
+        --no-pull)
+            no_pull=1
+	    ;;
+    esac
+done
+echo "no shit: ${no_shit}"
+echo "no pull: ${no_pull}"
+
