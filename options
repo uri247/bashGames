@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# alpha is an argument without parameter
+# beta is an argument with parameter
+
+alpha=0
+beta=speed
+
+set -- $(getopt -n $0 -o 'ab' -l 'alpha,beta:' -u -- $@)
+while [ true ]; do
+    case $1 in
+        -a | --alpha) alpha=1; shift;;
+        -b | --beta) beta=$2; shift 2;;
+        --) shift; break;;
+    esac
+done
+
+echo "alpha: ${alpha}"
+echo "beta: ${beta}"
+echo "free argument: $@"
